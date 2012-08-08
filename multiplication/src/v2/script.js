@@ -19,7 +19,7 @@ $(function() {
 		var h = $(window).height();
 		var w = $('#main-content').width();
 
-		var unit = Math.min(40, Math.round(Math.min(h, w) / 9));
+		var unit = Math.min(40, Math.round(Math.min(h, w) / 10));
 
 		$('label[for=answer]').text(x + ' x ' + y + ' = ');
 		$('#answer').val('').removeClass('correct');		
