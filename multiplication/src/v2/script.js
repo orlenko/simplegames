@@ -27,7 +27,7 @@ $(function() {
 		}
 		$('.cell').css({width: unit + 'px', height: unit + 'px'})
 
-		$('#answer').val(1);
+		$('#answer').val(1).trigger('change');
 
 		return false;
 	}
@@ -45,6 +45,7 @@ $(function() {
 
 		if (val == answer) {
 			$(this).addClass('correct')
+			$('#audio-yes').get(0).play();
 		} else {
 			$(this).removeClass('correct')
 			var dist = Math.abs((answer - val) / answer)
@@ -61,6 +62,8 @@ $(function() {
 			'opacity': opacity
 		})
 	})
+	
+	$('#answer').keyup(function(){$(this).trigger('change')})
 
 	$('#new-game').click(newGame);
 

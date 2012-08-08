@@ -12,18 +12,19 @@ input#answer {
 	transition: all 500ms ease-in;
 }
 
-input#answer.corrent {
+input#answer.correct {
 	color: #009930;
 	border: 3px solid #009930;
 	font-weight: bold;
-	font-size: 2em;
+	font-size: 120%;
 }
 
 .cell {
 	float: left;
 	margin: 0;
 	padding: 0;
-	-webkit-box-shadow: inset 0px 0px 16px 2px rgba(0, 0, 0, .1);
-	box-shadow: inset 0px 0px 16px 2px rgba(0, 0, 0, .1);
-	border: 1px solid black;
+	-webkit-box-shadow: inset 0px 1px 16px 2px rgba(255, 255, 255, .8);
+	-moz-box-shadow: inset 0px 1px 16px 2px rgba(255, 255, 255, .8);
+	box-shadow: inset 0px 1px 16px 2px rgba(255, 255, 255, .8);
+	border: 1px solid white;
 }
