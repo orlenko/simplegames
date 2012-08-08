@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+		<link rel="stylesheet" href="style.css">
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+		<script src="script.js"></script>
+
+		<title>Times Game</title>
+	</head>
+	<body>
+		<div style="display: none;">
+			<audio id="audio-yes" preload="auto">
+				<source src="yes.mp3" type="audio/mp3"></source>
+			</audio>
+		</div>
+		<div data-role="page" id="main">
+			<div data-role="header">
+				<a href="" data-icon="refresh" id="new-game">New Game</a>
+				<h1>Times Game</h1>
+				<a href="" data-icon="gear" id="settings">Settings</a>
+			</div>
+			<div data-role="content" id="main-content">
+				<div data-role="fieldcontain">
+					<label for="answer">2 x 2 = </label>
+					<input type="range" name="answer" id="answer" value="4" min="1" max="100" />
+				</div>
+				<div id="matrix"></div>
+			</div>
+		</div>
+	</body>
+</html>
