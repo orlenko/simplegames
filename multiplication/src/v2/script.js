@@ -30,7 +30,7 @@ $(function() {
 		}
 		$('.cell').css({width: unit + 'px', height: unit + 'px'})
 
-		$('#answer').val('').trigger('change').focus();
+		$('#answer').val(1).trigger('change').val('').trigger('change').focus();
 
 		return false;
 	}
