@@ -7,8 +7,11 @@ $(function() {
 	var x = 0;
 	var y = 0;
 	var answer = 0;
+	var score = 0;
+	var isNewGame = false;
 
 	function newGame() {
+		isNewGame = true;
 		x = Math.floor(Math.random() * 8 + 2);
 		y = Math.floor(Math.random() * 8 + 2);
 		answer = x * y;
@@ -19,7 +22,7 @@ $(function() {
 		var unit = Math.round(Math.min(h, w) / 9);
 
 		$('label[for=answer]').text(x + ' x ' + y + ' = ');
-		$('#answer').val('').removeClass('correct');
+		$('#answer').val('').removeClass('correct');		
 
 		$('#matrix').css({width: (x*unit + 2*x + 2) + 'px', height: (y*unit + 2*y + 2) + 'px'}).html('');
 		for(var i=0; i<answer; i++) {
@@ -27,7 +30,7 @@ $(function() {
 		}
 		$('.cell').css({width: unit + 'px', height: unit + 'px'})
 
-		$('#answer').val(1).trigger('change');
+		$('#answer').val('').trigger('change').focus();
 
 		return false;
 	}
@@ -45,21 +48,31 @@ $(function() {
 
 		if (val == answer) {
 			$(this).addClass('correct')
-			$('#audio-yes').get(0).play();
+			$('.cell').css({opacity: 1})
+			
+			if (isNewGame) {
+				isNewGame = false;
+				score += 1;
+				$('#score').html('::: Score: ' + score)
+			}
+			//$('#audio-yes').get(0).play();
 		} else {
 			$(this).removeClass('correct')
-			var dist = Math.abs((answer - val) / answer)
-			opacity = 1 - .2 - dist/5;
-			if (opacity < .2) {
-				opacity = .3
+			if (val < answer) {
+				var cells = $('.cell')
+				cells.css({opacity: .4})
+				for (var i=0; i<val; ++i) {
+					$(cells[i]).css({opacity: 1})
+				}
+			} else {
+				$('.cell').css({opacity: 1})
+				r = 255
+				g = 50
 			}
-			r += dist * 50 + 205;
-			g -= dist * 15 + 40;
 		}
 
 		$('.cell').css({
-			'background-color': 'rgb(' + Math.round(r) + ',' + Math.round(g) + ',' + Math.round(b) + ')',
-			'opacity': opacity
+			'background-color': 'rgb(' + Math.round(r) + ',' + Math.round(g) + ',' + Math.round(b) + ')'
 		})
 	})
 	
