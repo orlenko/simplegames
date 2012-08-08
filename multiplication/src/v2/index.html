@@ -34,15 +34,14 @@
 		</div>
 		<div data-role="page" id="main">
 			<div data-role="header" data-theme="b">
-				<a href="" data-icon="refresh" id="new-game">New Game</a>
-				<h1>Times Game <span id="score"></span></h1>
+				<a href="" data-icon="refresh" id="new-game">New</a>
+				<h1 id="score">Times Game</h1>
 				
 				<!--<a href="" data-icon="gear" id="settings">Settings</a>-->
 			</div>
 			<div data-role="content" id="main-content">
 				<div data-role="fieldcontain">
-					<label for="answer">2 x 2 = </label>
-					<input type="range" name="answer" id="answer" value="4" min="0" max="81" />
+					<label for="answer">2 x 2 = </label><input type="range" name="answer" id="answer" value="4" min="0" max="81" />
 				</div>
 				<div id="matrix"></div>
 			</div>

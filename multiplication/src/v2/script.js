@@ -53,7 +53,7 @@ $(function() {
 			if (isNewGame) {
 				isNewGame = false;
 				score += 1;
-				$('#score').html('::: Score: ' + score)
+				$('#score').html('Score: ' + score)
 			}
 			//$('#audio-yes').get(0).play();
 		} else {

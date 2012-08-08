@@ -2,6 +2,9 @@ label#answer-label {
 	line-height: 30px;
 	font-size: 120%;
 	text-align: right;
+	width: auto;
+	white-space: nowrap;
+	display:inline-block !important;
 }
 
 input#answer {
@@ -28,3 +31,4 @@ input#answer.correct {
 	box-shadow: inset 0px 1px 16px 2px rgba(255, 255, 255, .8);
 	border: 1px solid white;
 }
+
